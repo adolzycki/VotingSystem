@@ -28,6 +28,7 @@ contract VotingContract {
         require(open,"Voting has ended");
         require(!voters[msg.sender].voted,"You have already voted");
         require(candidateId < candidates.length, "Wrong candidate Id");
+        // brakuje sprawdzenia czy moze glosowac
 
         voters[msg.sender].voted = true;
         voters[msg.sender].vote = candidateId;
