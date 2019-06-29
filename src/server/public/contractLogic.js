@@ -39,45 +39,8 @@ function Vote() {
         try {
             window.ethereum.enable().then(function () {
 
-                var abi = [{
-                    "constant": true,
-                    "inputs": [],
-                    "name": "getWinner",
-                    "outputs": [{"name": "winnerId", "type": "uint8"}],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                }, {
-                    "constant": false,
-                    "inputs": [{"name": "voterAdress", "type": "address"}],
-                    "name": "giveRightToVote",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                }, {
-                    "constant": false,
-                    "inputs": [{"name": "candidateId", "type": "uint8"}],
-                    "name": "vote",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                }, {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "closeVoting",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                }, {
-                    "inputs": [{"name": "numberOfCandidates", "type": "uint8"}],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "constructor"
-                }];
-                var adress = "0x06b24b10c19b30df7bb8d918fc080f3f31a400e4";
+                var abi = [{"constant":true,"inputs":[],"name":"getWinner","outputs":[{"name":"winnerId","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"voterAdress","type":"address"}],"name":"giveRightToVote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"candidateId","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"closeVoting","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[{"name":"numberOfCandidates","type":"uint8"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}];
+                var adress = "0x517e8a41c1d4540b4315378ac3a80fa0638fd495";
                 var contract = web3.eth.contract(abi).at(adress);
                 web3.eth.defaultAccount = web3.eth.accounts[0];
 
